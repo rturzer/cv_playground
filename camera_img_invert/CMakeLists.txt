@@ -7,7 +7,6 @@ project(camera_img_invert)
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   image_transport
-  opencv2
   roscpp
   std_msgs
 )
@@ -130,16 +129,16 @@ include_directories(
 # add_dependencies(camera_img_invert ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(camera_img_invert_node src/camera_img_invert_node.cpp)
+add_executable(camera_img_invert_node src/camera_img_invert_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(camera_img_invert_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(camera_img_invert_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(camera_img_invert_node
+   ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
